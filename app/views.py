@@ -63,6 +63,12 @@ def files():
 
 
 
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash("You have been logged out.", "success")
+    return redirect(url_for('home'))
 
 
 
